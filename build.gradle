@@ -24,15 +24,20 @@ repositories {
 }
 
 dependencies {
-	compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.4.0'
-    compile group: 'io.netty', name: 'netty-all', version: '4.1.24.Final'
+    // Add this dependency for Spring Boot core functionality
+    implementation 'org.springframework.boot:spring-boot-starter'
+    
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.3.2'
+    
+    // https://mvnrepository.com/artifact/io.netty/netty-all
+    implementation 'io.netty:netty-all:4.1.111.Final'
+    
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-
-    compileOnly 'org.projectlombok:lombok:1.18.12'
-    annotationProcessor 'org.projectlombok:lombok:1.18.12'
-    testCompileOnly 'org.projectlombok:lombok:1.18.12'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.30'
 }
 
 tasks.named('test') {
